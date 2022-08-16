@@ -3,6 +3,9 @@
 
 # import libraries
 import os
+from typing import AnyStr
+
+
 os.environ['QT_QPA_PLATFORM']='offscreen'
 
 
