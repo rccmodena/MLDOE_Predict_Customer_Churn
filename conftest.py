@@ -5,11 +5,22 @@ Author: Rudi César Comitto Modena
 Date: August, 2022
 """
 
+import os
+import shutil
 import pytest
+import constants as const
 
-def df_plugin():
-    return None
+@pytest.fixture(autouse=True)
+def setup():
+    '''
+    Remove all files created by the modeling process
+    '''
+    for path in [const.EDA_FIGURE_FOLDER, const.RESULTS_FIGURE_FOLDER, const.MODELS_FOLDER]:
+        for filename in os.listdir(path):
+            file_path = os.path.join(path, filename)
 
-
-def pytest_configure():
-    pytest.df = df_plugin()
+            try:
+                if os.path.isfile(file_path):
+                    os.unlink(file_path)
+            except Exception:
+                print(f"Failed to delete {file_path}.")
