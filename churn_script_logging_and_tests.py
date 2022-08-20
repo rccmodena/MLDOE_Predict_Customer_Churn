@@ -34,6 +34,8 @@ def setup():
 
     for path in list_folders:
         for filename in os.listdir(path):
+            if filename == '.gitkeep':
+                continue
             file_path = os.path.join(path, filename)
 
             try:
