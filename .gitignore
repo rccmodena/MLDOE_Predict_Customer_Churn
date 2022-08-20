@@ -7,3 +7,9 @@ venv/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# Images
+*.png
+
+# Models
+*.pkl
