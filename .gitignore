@@ -13,3 +13,6 @@ venv/
 
 # Models
 *.pkl
+
+# Logs
+*.log
