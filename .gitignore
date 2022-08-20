@@ -7,3 +7,15 @@ venv/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Images
+*.png
+
+# Models
+*.pkl
+
+# Logs
+*.log
