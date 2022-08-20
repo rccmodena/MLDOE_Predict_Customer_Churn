@@ -15,32 +15,32 @@ The project structure tree is shown below:
 ```
 ./MLDOE_Predict_Customer_Churn/
 |
-├── data/                               # Store the datasets
-│   └── bank_data.csv                   # Dataset for this problem with 22 columns and 10,127 rows
+├── data/                                       # Store the datasets
+│   └── bank_data.csv                           # Dataset for this problem with 22 columns and 10,127 rows
 |
-├── images/                             # Store the images
-│   ├── eda/                            # Store the images of the Exploratory Data Analysis
-│   └── results/                        # Store the images of the modeling process
+├── images/                                     # Store the images
+│   ├── eda/                                    # Store the images of the Exploratory Data Analysis
+│   └── results/                                # Store the images of the modeling process
 |
-├── logs/                               # Store the logs
+├── logs/                                       # Store the logs
 |
-├── models/                             # Store the models generated
+├── models/                                     # Store the models generated
 |
-├── .gitignore                          # Specifies untracked files that Git should ignore
+├── .gitignore                                  # Specifies untracked files that Git should ignore
 |
-├── churn_library.py                    # Python module with the code refactored in functions
+├── churn_library.py                            # Python module with the code refactored in functions
 |
-├── churn_notebook.ipynb                # Jupyter notebook containing the original code that will be refactored
+├── churn_notebook.ipynb                        # Jupyter notebook containing the original code that will be refactored
 |
-├── churn_script_logging_and_tests.py   # Python module that runs the tests and generate the logs
+├── churn_script_logging_and_tests.py           # Python module that runs the tests and generate the logs
 |
-├── constants.py                        # Python module with constant values used in the churn_library.py module
+├── constants.py                                # Python module with constant values used in the churn_library.py module
 |
-├── LICENSE                             # MIT License
+├── LICENSE                                     # MIT License
 |
-├── README.md                           # Readme file of the project
+├── README.md                                   # Readme file of the project
 |
-└── requirements.txt                    # Store information about all the libraries used to develop the project
+└── requirements.txt                            # Store information about all the libraries used to develop the project
 ```
 
 ## Requirements
@@ -88,19 +88,11 @@ The plots stored:
 │   |   ├── marital_status_distribution.png     # Marital Status Distributions
 │   |   └── total_transaction_distribution.png  # Total transactions Distributions
 │   └── results/
-|       ├── ...                                 # Store the images of the modeling process
+│   |   ├── feature_importances.png             # Random Forest Classifier Feature Importanes Plot
+│   |   ├── logistic_results.png                # Logistic Regression Model Report
+│   |   ├── rfc_results.png                     # Random Forest Classifier Model Report
+│   |   └── roc_curve_result.png                # ROC Curves of Logistic Regression and Random Forest Classifier
 ```
-
-- `churn_distribution.png`
-  ![Churn Distribution](./images/eda/churn_distribution.png)
-- `customer_age_distribution.png`
-  ![Customer Age Distribution](./images/eda/customer_age_distribution.png)
-- `heatmap.png`
-  ![Heatmap - Correlations](./images/eda/heatmap.png)
-- `marital_status_distribution.png`
-  ![Marital Status Distributions](./images/eda/marital_status_distribution.png)
-- `total_transaction_distribution.png`
-  ![Total transactions Distributions](./images/eda/total_transaction_distribution.png)
 
 The models stored:
 
@@ -108,8 +100,8 @@ The models stored:
 ./MLDOE_Predict_Customer_Churn/
 |
 ├── models/
-|   ├─ logistic_model.pkl               # Logistic Regression model
-|   └─ rfc_model.pkl                    # Random Forest Classifier model
+|   ├─ logistic_model.pkl                       # Logistic Regression model
+|   └─ rfc_model.pkl                            # Random Forest Classifier model
 ```
 
 To test the churn_library run the followin command:
@@ -121,25 +113,29 @@ $ ipython churn_script_logging_and_tests.py
 The output should be:
 
 ```
-================================================= test session starts =================================================
+=================================================================== test session starts ==================================================================
 platform win32 -- Python 3.8.10, pytest-7.1.2, pluggy-1.0.0 -- C:\Users\rudim\AppData\Local\Programs\Python\Python38\python.exe
 cachedir: .pytest_cache
 rootdir: D:\my_stuff\current\sandbox\cursos\udacity\machine_learning_devops_engineer\repos\MLDOE_Predict_Customer_Churn
 collected 5 items
 
-churn_script_logging_and_tests.py::TestClassChurnLibrary::test_import PASSED                                     [ 20%]
-churn_script_logging_and_tests.py::TestClassChurnLibrary::test_eda PASSED                                        [ 40%]
-churn_script_logging_and_tests.py::TestClassChurnLibrary::test_encoder_helper PASSED                             [ 60%]
-churn_script_logging_and_tests.py::TestClassChurnLibrary::test_perform_feature_engineering PASSED                [ 80%]
-churn_script_logging_and_tests.py::TestClassChurnLibrary::test_train_models PASSED                               [100%]
+churn_script_logging_and_tests.py::TestClassChurnLibrary::test_import PASSED                                                                        [ 20%]
+churn_script_logging_and_tests.py::TestClassChurnLibrary::test_eda PASSED                                                                           [ 40%]
+churn_script_logging_and_tests.py::TestClassChurnLibrary::test_encoder_helper PASSED                                                                [ 60%]
+churn_script_logging_and_tests.py::TestClassChurnLibrary::test_perform_feature_engineering PASSED                                                   [ 80%]
+churn_script_logging_and_tests.py::TestClassChurnLibrary::test_train_models PASSED                                                                  [100%]
 
-================================================== 5 passed in 0.06s ==================================================
+============================================================== 5 passed in 242.75s (0:04:02) =============================================================
 ```
 
 The log file `./logs/churn_library.log` content should be like:
 
 ```
-[2022-08-17 04:18:53] root - INFO - Testing import_data: SUCCESS
+[2022-08-20 14:57:21] root - INFO - Testing import_data: SUCCESS
+[2022-08-20 14:57:23] root - INFO - Testing perform_eda: SUCCESS
+[2022-08-20 14:57:23] root - INFO - Testing test_encoder_helper: SUCCESS
+[2022-08-20 14:57:23] root - INFO - Testing test_perform_feature_engineering: SUCCESS
+[2022-08-20 15:01:23] root - INFO - Testing test_train_models: SUCCESS
 ```
 
 ## License
